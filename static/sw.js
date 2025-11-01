@@ -1,6 +1,6 @@
 // Service Worker for Himma Group Website
 // Bump CACHE_NAME to force clients to fetch updated icons/favicons
-const CACHE_NAME = 'himma-v3';
+const CACHE_NAME = 'himma-v4';
 const RUNTIME_CACHE = 'himma-runtime';
 
 // Assets to cache on install

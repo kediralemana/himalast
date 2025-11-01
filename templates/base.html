@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="preconnect" href="https://www.google-analytics.com">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css', v='20251101') }}" />
 
   {# Google Analytics 4 - Replace GA_MEASUREMENT_ID with your actual ID #}
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -88,7 +88,7 @@
       <nav class="nav">
         <a href="{{ url_for('index') }}#about">About</a>
         <a href="{{ url_for('index') }}#businesses">Businesses</a>
-        <a href="{{ url_for('index') }}#gallery">Gallery</a>
+        <a href="{{ url_for('machines') }}#machines-gallery">Equipment Gallery</a>
         <a href="{{ url_for('index') }}#faq">FAQ</a>
         <a href="{{ url_for('index') }}#contact">Contact</a>
       </nav>
@@ -152,31 +152,46 @@
   </button>
 
   <!-- WhatsApp Floating Button -->
-  <a class="whatsapp-fab" href="https://wa.me/251935988288?text=Hello%20Himma%20Group%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" aria-label="Chat on WhatsApp">
+  <a class="whatsapp-fab" href="https://wa.me/251935988288?text=Hello%20Himma%20Group%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
     <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
   </a>
 
   <script>
     // Make site config available globally
-    window.HIMMA_CONTENT = {
-      site: {{ site | tojson }},
-      links: {{ links | tojson }}
-    };
+    window.HIMMA_CONTENT = JSON.parse('{{ {"site": site, "links": links} | tojson | safe }}');
     // Set current year if placeholder exists
     (function(){
       var y = document.getElementById('year');
       if (y) { y.textContent = new Date().getFullYear(); }
     })();
   </script>
-  <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='js/main.js', v='20251101') }}" defer></script>
 
   {# PWA Service Worker Registration #}
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('{{ url_for('static', filename='sw.js') }}')
-          .then(registration => {
-            console.log('Service Worker registered successfully:', registration.scope);
+        navigator.serviceWorker.register("{{ url_for('static', filename='sw.js') }}")
+          .then(reg => {
+            // If a new worker is waiting, activate it immediately
+            if (reg.waiting) {
+              reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+            }
+            // If a new worker is installing, listen and activate when ready
+            reg.addEventListener('updatefound', () => {
+              const sw = reg.installing;
+              if (!sw) return;
+              sw.addEventListener('statechange', () => {
+                if (sw.state === 'installed' && navigator.serviceWorker.controller) {
+                  sw.postMessage({ type: 'SKIP_WAITING' });
+                }
+              });
+            });
+            // When controller changes, reload once to get fresh assets
+            let refreshed = false;
+            navigator.serviceWorker.addEventListener('controllerchange', () => {
+              if (refreshed) return; refreshed = true; window.location.reload();
+            });
           })
           .catch(error => {
             console.log('Service Worker registration failed:', error);

@@ -12,7 +12,7 @@
   <!-- Hero Section with Full-Width Slider -->
   <section class="hero-slider-fullwidth">
     <div class="slides-wrapper">
-  <div class="slide active" style="background-image: url('{{ url_for('static', filename='img/slider-warehouse.jpg') }}')">
+  <div class="slide slide-warehouse active">
         <div class="slide-overlay"></div>
         <div class="container slide-content">
           <span class="eyebrow">Welcome to Himma Group</span>
@@ -24,7 +24,7 @@
           </div>
         </div>
       </div>
-  <div class="slide" style="background-image: url('{{ url_for('static', filename='img/slider-roaster.jpg') }}')">
+  <div class="slide slide-roaster">
         <div class="slide-overlay"></div>
         <div class="container slide-content">
           <span class="eyebrow">Bakery Raw Materials</span>
@@ -36,7 +36,7 @@
           </div>
         </div>
       </div>
-  <div class="slide" style="background-image: url('{{ url_for('static', filename='img/slider-kitchen.jpg') }}')">
+  <div class="slide slide-kitchen">
         <div class="slide-overlay"></div>
         <div class="container slide-content">
           <span class="eyebrow">Modern Bakery Solutions</span>
@@ -63,7 +63,7 @@
   </section>
 
   <!-- About Section -->
-  <section class="container" id="about" style="margin:4rem auto">
+  <section class="container" id="about">
     <div class="feature-slab">
       <div class="feature-grid">
         <div class="feature-content">
@@ -73,7 +73,7 @@
           <p>Our team brings decades of experience in coffee sourcing, equipment logistics, and food supply chain management across East Africa.</p>
         </div>
         <div>
-          <h3 style="margin-top:0">Why Partner with Himma</h3>
+          <h3>Why Partner with Himma</h3>
           <ul class="list-check">
             <li>Direct relationships with farmers and producers</li>
             <li>Transparent, traceable supply chains</li>
@@ -88,7 +88,7 @@
   </section>
 
   <!-- Businesses Section -->
-  <section class="container" id="businesses" style="margin:4rem auto">
+  <section class="container" id="businesses">
     <h2 class="section-title" style="text-align:center">Our Businesses</h2>
     <p class="section-subtitle" style="text-align:center;max-width:700px;margin-left:auto;margin-right:auto">Three complementary operations serving Ethiopia's agribusiness and food industries.</p>
     <div class="cards">
@@ -225,7 +225,7 @@
           <h3 style="margin-top:0">Contact Details</h3>
           <p><strong>Email:</strong><br><a href="mailto:{{ site.email }}" style="color:var(--green)">{{ site.email }}</a></p>
           <p><strong>Phone:</strong><br><a href="tel:{{ site.phone }}" style="color:var(--green)">{{ site.phone }}</a></p>
-          <p><strong>WhatsApp:</strong><br><a href="https://wa.me/{{ site.whatsapp | replace('+', '') }}" style="color:var(--green)" target="_blank">{{ site.phone }}</a></p>
+          <p><strong>WhatsApp:</strong><br><a href="https://wa.me/{{ site.whatsapp | replace('+', '') }}" style="color:var(--green)" target="_blank" rel="noopener">{{ site.phone }}</a></p>
           <p style="margin-top:2rem;padding-top:2rem;border-top:1px solid #e7e9e7"><strong>Location:</strong><br>Addis Ababa, Ethiopia</p>
         </div>
         <form class="card contact-form" id="contact-form" style="padding:2rem">

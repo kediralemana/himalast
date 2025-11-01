@@ -41,7 +41,7 @@
 
 {% block content %}
   <!-- Hero -->
-  <section class="cover-hero" style="background-image:url('{{ url_for('static', filename='img/materials.png') }}');background-position:center;background-size:cover;background-repeat:no-repeat">
+  <section class="cover-hero cover-hero-materials">
     <div class="container cover-inner">
       <span class="eyebrow">Bakery Raw Materials</span>
       <h1>Consistent Ingredients. Trusted Supply.</h1>
@@ -53,7 +53,7 @@
       </div>
       <div class="hero-cta" style="margin-top:2rem">
         <a href="{{ url_for('index') }}#contact" class="btn primary">Order Materials</a>
-        <a href="https://wa.me/251935988288?text=Hi%20Himma%20Group%2C%20I%20need%20bakery%20materials." target="_blank" class="btn ghost">Chat on WhatsApp</a>
+  <a href="https://wa.me/251935988288?text=Hi%20Himma%20Group%2C%20I%20need%20bakery%20materials." target="_blank" rel="noopener" class="btn ghost">Chat on WhatsApp</a>
       </div>
     </div>
   </section>
@@ -319,7 +319,7 @@
         <div class="cta-row mt-2">
           <a class="btn primary" href="{{ url_for('index') }}#contact">Contact our materials team</a>
           <a class="btn ghost" href="{{ url_for('index') }}#contact">Request a quote</a>
-          <a class="btn ghost" href="https://wa.me/251935988288?text=Hi%20Himma%20Group%2C%20I%20need%20bakery%20materials%20pricing%20and%20availability." target="_blank">Chat on WhatsApp</a>
+          <a class="btn ghost" href="https://wa.me/251935988288?text=Hi%20Himma%20Group%2C%20I%20need%20bakery%20materials%20pricing%20and%20availability." target="_blank" rel="noopener">Chat on WhatsApp</a>
         </div>
 
         <div class="mt-4" style="font-size:.95rem;color:var(--text-muted)">
