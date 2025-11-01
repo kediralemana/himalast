@@ -1,0 +1,341 @@
+{% extends "base.html" %}
+
+{% block title %}Himma Group - Premium Ethiopian Coffee Export & Bakery Solutions{% endblock %}
+
+{% block content %}
+  {% block extra_css %}
+  <!-- Preload hero slider images -->
+  <link rel="preload" as="image" href="{{ url_for('static', filename='img/slider-warehouse.jpg') }}">
+  <link rel="preload" as="image" href="{{ url_for('static', filename='img/slider-roaster.jpg') }}">
+  <link rel="preload" as="image" href="{{ url_for('static', filename='img/slider-kitchen.jpg') }}">
+  {% endblock %}
+  <!-- Hero Section with Full-Width Slider -->
+  <section class="hero-slider-fullwidth">
+    <div class="slides-wrapper">
+  <div class="slide active" style="background-image: url('{{ url_for('static', filename='img/slider-warehouse.jpg') }}')">
+        <div class="slide-overlay"></div>
+        <div class="container slide-content">
+          <span class="eyebrow">Welcome to Himma Group</span>
+          <h1>Connecting Africa's Finest Coffee to the World</h1>
+          <p>Premium Ethiopian coffee export, bakery machinery import, and food ingredient supply across East Africa.</p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn primary">Get in Touch</a>
+            <a href="#businesses" class="btn ghost">Learn More</a>
+          </div>
+        </div>
+      </div>
+  <div class="slide" style="background-image: url('{{ url_for('static', filename='img/slider-roaster.jpg') }}')">
+        <div class="slide-overlay"></div>
+        <div class="container slide-content">
+          <span class="eyebrow">Bakery Raw Materials</span>
+          <h1>Consistent Ingredients. Trusted Supply</h1>
+          <p>Certified inputs, documented quality, and responsive delivery for Ethiopian bakeries.</p>
+          <div class="hero-cta">
+            <a href="{{ url_for('coffee') }}" class="btn primary">Explore Coffee</a>
+            <a href="{{ url_for('index') }}#contact" class="btn ghost">Request Quote</a>
+          </div>
+        </div>
+      </div>
+  <div class="slide" style="background-image: url('{{ url_for('static', filename='img/slider-kitchen.jpg') }}')">
+        <div class="slide-overlay"></div>
+        <div class="container slide-content">
+          <span class="eyebrow">Modern Bakery Solutions</span>
+          <h1>Empowering Ethiopia's Food Industry</h1>
+          <p>Import, installation, and support of industry-leading bakery equipment and food inputs.</p>
+          <div class="hero-cta">
+            <a href="{{ url_for('machines') }}" class="btn primary">View Equipment</a>
+            <a href="{{ url_for('index') }}#contact" class="btn ghost">Request Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="slider-nav prev" aria-label="Previous slide">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="slider-nav next" aria-label="Next slide">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="slider-indicators">
+      <button class="indicator active" aria-label="Slide 1"></button>
+      <button class="indicator" aria-label="Slide 2"></button>
+      <button class="indicator" aria-label="Slide 3"></button>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="container" id="about" style="margin:4rem auto">
+    <div class="feature-slab">
+      <div class="feature-grid">
+        <div class="feature-content">
+          <span class="eyebrow">About Us</span>
+          <h2>Building Bridges Between Ethiopia and the World</h2>
+          <p>Himma Group is a privately held trading and service company based in Addis Ababa. We connect Ethiopian producers with global markets and support Ethiopian businesses with the tools, ingredients, and expertise they need to grow.</p>
+          <p>Our team brings decades of experience in coffee sourcing, equipment logistics, and food supply chain management across East Africa.</p>
+        </div>
+        <div>
+          <h3 style="margin-top:0">Why Partner with Himma</h3>
+          <ul class="list-check">
+            <li>Direct relationships with farmers and producers</li>
+            <li>Transparent, traceable supply chains</li>
+            <li>Factory-trained technicians and ongoing support</li>
+            <li>Flexible, responsive logistics coordination</li>
+            <li>Decades of industry experience</li>
+            <li>Commitment to quality and reliability</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Businesses Section -->
+  <section class="container" id="businesses" style="margin:4rem auto">
+    <h2 class="section-title" style="text-align:center">Our Businesses</h2>
+    <p class="section-subtitle" style="text-align:center;max-width:700px;margin-left:auto;margin-right:auto">Three complementary operations serving Ethiopia's agribusiness and food industries.</p>
+    <div class="cards">
+      <article class="card card-coffee">
+  <img class="card-top-image" src="{{ url_for('static', filename='img/coffee.jpg') }}" alt="Coffee" loading="lazy" decoding="async" />
+        <div class="card-content">
+          <span class="card-badge">01</span>
+          <h3>Coffee Export</h3>
+          <p>Green and specialty coffee export with traceability and strong relationships at origin.</p>
+          <div class="cta-row">
+            <a href="https://himmagroup.com/" class="btn primary">Explore Coffee</a>
+            <a href="{{ url_for('index') }}#contact" class="btn ghost">Request Quote</a>
+          </div>
+        </div>
+      </article>
+      <article class="card card-machines">
+  <img class="card-top-image" src="{{ url_for('static', filename='img/machines.png') }}" alt="Machines" loading="lazy" decoding="async" />
+        <div class="card-content">
+          <span class="card-badge">02</span>
+          <h3>Bakery Machine Import</h3>
+          <p>Import and installation of reliable bakery equipment—ovens, mixers, proofers and more.</p>
+          <div class="cta-row">
+            <a href="{{ url_for('machines') }}" class="btn primary">Explore Machines</a>
+            <a href="{{ url_for('index') }}#contact" class="btn ghost">Request Quote</a>
+          </div>
+        </div>
+      </article>
+      <article class="card card-materials">
+  <img class="card-top-image" src="{{ url_for('static', filename='img/materials.png') }}" alt="Materials" loading="lazy" decoding="async" />
+        <div class="card-content">
+          <span class="card-badge">03</span>
+          <h3>Bakery Raw Materials</h3>
+          <p>Procurement and supply of flour, improvers, yeast, chocolate, and other bakery inputs.</p>
+          <div class="cta-row">
+            <a href="{{ url_for('materials') }}" class="btn primary">Explore Materials</a>
+            <a href="{{ url_for('index') }}#contact" class="btn ghost">Request Quote</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Key Stats -->
+  <section class="container" id="stats" style="margin:3rem auto">
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-value counter" data-target="15">0</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value counter" data-target="12">0</div>
+        <div class="stat-label">Origin Partners</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value counter" data-target="4">0</div>
+        <div class="stat-label">Regions Served</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value counter" data-target="100">0</div>
+        <div class="stat-label">Products & SKUs</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Presence -->
+  <section class="container" id="presence" style="margin:3rem auto">
+    <h2 class="section-title" style="text-align:center">Global Presence</h2>
+    <p class="section-subtitle" style="text-align:center;max-width:700px;margin-inline:auto">We connect Ethiopian quality to partners around the world.</p>
+    <div class="regions-grid">
+      <article class="region-card">
+  <img src="{{ url_for('static', filename='img/usa.svg') }}" alt="North America" loading="lazy" decoding="async" />
+        <h3>North America</h3>
+        <p>Specialty coffee buyers and equipment distributors in the US & Canada.</p>
+      </article>
+      <article class="region-card">
+  <img src="{{ url_for('static', filename='img/europe.svg') }}" alt="Europe" loading="lazy" decoding="async" />
+        <h3>Europe</h3>
+        <p>Roasters and bakery groups across EU markets and the UK.</p>
+      </article>
+      <article class="region-card">
+  <img src="{{ url_for('static', filename='img/middleeast.svg') }}" alt="Middle East" loading="lazy" decoding="async" />
+        <h3>Middle East</h3>
+        <p>Ingredients supply and foodservice partners in GCC countries.</p>
+      </article>
+      <article class="region-card">
+  <img src="{{ url_for('static', filename='img/china.svg') }}" alt="Asia" loading="lazy" decoding="async" />
+        <h3>Asia</h3>
+        <p>Emerging demand for Ethiopian origins and bakery technology.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Frequently Asked Questions -->
+  <section class="container" id="faq" style="margin:3rem auto">
+    <h2 class="section-title" style="text-align:center">Frequently Asked Questions</h2>
+    <div class="accordion" style="max-width:900px;margin-inline:auto">
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-title">What products and services do you offer?</span>
+          <span class="accordion-icon">+</span>
+        </button>
+        <div class="accordion-content">
+          <p>We export premium Ethiopian green coffee, import/install bakery machinery, and supply bakery ingredients. This section uses placeholder content you can tailor to your business.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-title">Do you provide after-sales support?</span>
+          <span class="accordion-icon">+</span>
+        </button>
+        <div class="accordion-content">
+          <p>Yes. Our technicians offer installation, training, maintenance, and spare parts planning. Replace this text with specifics for your team.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-title">How can we request a quote?</span>
+          <span class="accordion-icon">+</span>
+        </button>
+        <div class="accordion-content">
+          <p>Use the contact form below with product details and monthly volume. Our team replies within 1–2 business days.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact" style="background:var(--bg);padding:4rem 0">
+    <div class="container">
+      <h2 class="section-title" style="text-align:center">Get in Touch</h2>
+      <p class="section-subtitle" style="text-align:center;max-width:600px;margin-left:auto;margin-right:auto">Have questions about our services? We're here to help you grow your business.</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; margin:2.5rem 0; max-width:1000px; margin-left:auto; margin-right:auto">
+        <div class="card" style="padding:2rem">
+          <h3 style="margin-top:0">Contact Details</h3>
+          <p><strong>Email:</strong><br><a href="mailto:{{ site.email }}" style="color:var(--green)">{{ site.email }}</a></p>
+          <p><strong>Phone:</strong><br><a href="tel:{{ site.phone }}" style="color:var(--green)">{{ site.phone }}</a></p>
+          <p><strong>WhatsApp:</strong><br><a href="https://wa.me/{{ site.whatsapp | replace('+', '') }}" style="color:var(--green)" target="_blank">{{ site.phone }}</a></p>
+          <p style="margin-top:2rem;padding-top:2rem;border-top:1px solid #e7e9e7"><strong>Location:</strong><br>Addis Ababa, Ethiopia</p>
+        </div>
+        <form class="card contact-form" id="contact-form" style="padding:2rem">
+          <h3 style="margin-top:0">Send us a Message</h3>
+          <label>
+            Name
+            <input type="text" name="name" required minlength="2" placeholder="Your full name" />
+            <span class="form-error" data-field="name"></span>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required placeholder="your@email.com" />
+            <span class="form-error" data-field="email"></span>
+          </label>
+          <label>
+            Subject
+            <input type="text" name="subject" placeholder="What is this about?" />
+            <span class="form-error" data-field="subject"></span>
+          </label>
+          <label class="full">
+            Message
+            <textarea name="message" rows="4" required minlength="10" placeholder="Tell us more..."></textarea>
+            <span class="form-error" data-field="message"></span>
+          </label>
+          <button type="submit" class="btn primary" style="width:100%;margin-top:1rem">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  {% block extra_js %}
+  <script>
+    // Contact form handling
+    (function() {
+      const form = document.getElementById('contact-form');
+      if (!form) return;
+      
+      // Fetch CSRF token
+      let csrfToken = '';
+      fetch('{{ url_for("get_csrf_token") }}')
+        .then(r => r.json())
+        .then(data => { csrfToken = data.csrf_token; })
+        .catch(e => console.error('Failed to get CSRF token:', e));
+      
+      const clearFieldErrors = () => {
+        form.querySelectorAll('.form-error').forEach(el => {
+          el.textContent = '';
+          el.style.display = 'none';
+        });
+      };
+      
+      const displayFieldError = (fieldName, message) => {
+        const errorEl = form.querySelector(`[data-field="${fieldName}"]`);
+        if (errorEl) {
+          errorEl.textContent = message;
+          errorEl.style.display = 'block';
+        }
+      };
+      
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        clearFieldErrors();
+        
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        
+        const formData = {
+          name: form.name.value.trim(),
+          email: form.email.value.trim(),
+          subject: form.subject.value.trim(),
+          message: form.message.value.trim()
+        };
+        
+        try {
+          const response = await fetch('{{ url_for("contact") }}', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'X-CSRFToken': csrfToken
+            },
+            body: JSON.stringify(formData)
+          });
+          
+          const result = await response.json();
+          
+          if (!response.ok) {
+            // Display validation errors
+            if (result.errors) {
+              Object.entries(result.errors).forEach(([field, message]) => {
+                displayFieldError(field, message);
+              });
+            }
+            window.showToast('error', 'Validation Error', result.message);
+          } else {
+            // Success
+            form.reset();
+            clearFieldErrors();
+            window.showToast('success', 'Message Sent!', result.message);
+          }
+        } catch (error) {
+          console.error('Form submission error:', error);
+          window.showToast('error', 'Error', 'Failed to send message. Please try again.');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
+      });
+    })();
+  </script>
+  {% endblock %}
+{% endblock %}

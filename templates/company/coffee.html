@@ -1,0 +1,269 @@
+{% extends "base.html" %}
+
+{% block title %}Premium Ethiopian Coffee Export | Traceability & Quality from Himma Group{% endblock %}
+
+{% block extra_js %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Premium Ethiopian Coffee",
+  "description": "Traceable, high-quality green coffee from Ethiopia's renowned origins. We export washed, natural, and honey-processed coffee to global markets.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Himma Coffee"
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "{{ site.name }}"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "127"
+  },
+  "category": "Coffee",
+  "origin": {
+    "@type": "Place",
+    "name": "Ethiopia",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "ET"
+    }
+  },
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Processing Methods",
+      "value": "Washed, Natural, Honey"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Experience",
+      "value": "15+ Years"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Quality",
+      "value": "100% Hand Picked"
+    }
+  ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+  <!-- Hero (full-bleed cover) -->
+  <section class="cover-hero" style="background:url('{{ url_for('static', filename='img/slider.jpg') }}') center/cover no-repeat">
+    <div class="container cover-inner">
+      <span class="eyebrow">Himma Coffee</span>
+      <h1>Premium Ethiopian Coffee Export</h1>
+      <p>From our washing station to global markets — traceable, high-quality green coffee from Ethiopia's renowned origins.</p>
+      <div class="kpis">
+        <div class="kpi"><strong>15+ Years</strong><div>Experience</div></div>
+        <div class="kpi"><strong>4</strong><div>Global Markets</div></div>
+        <div class="kpi"><strong>100%</strong><div>Hand Picked</div></div>
+      </div>
+  <div class="hero-cta mt-6">
+        <a href="#our-coffee" class="btn primary">Explore Our Coffee</a>
+        <a href="{{ url_for('index') }}#contact" class="btn ghost">Get a Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section class="feature-slab">
+    <div class="container feature-grid">
+      <div class="feature-content">
+        <span class="eyebrow">About Us</span>
+        <h2>Our Story</h2>
+        <p>Himma Coffee was established in 2023 by a husband-and-wife team with deep roots in Ethiopia's coffee industry. We bring over 15 years of experience across quality control, sourcing, and international marketing.</p>
+        <h3>Our Commitment</h3>
+        <p>We champion sustainable sourcing, fair partnerships, and full traceability — delivering consistently excellent green coffee to discerning buyers worldwide.</p>
+      </div>
+      <div>
+        <img src="{{ url_for('static', filename='img/coffee.jpg') }}" alt="Coffee cherries" style="width:100%;border-radius:16px;border:1px solid #e7e9e7"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Coffee -->
+  <section class="container my-7" id="our-coffee">
+    <h2 class="section-title">Our Coffee</h2>
+    <p class="section-subtitle">We export a diverse range of Ethiopian green coffee tailored to specialty and commercial buyers.</p>
+    <div class="cards">
+      <article class="card">
+  <img class="card-top-image" src="{{ url_for('static', filename='img/coffee.jpg') }}" alt="Washed coffee"/>
+        <div class="card-content">
+          <h3>Washed Coffee</h3>
+          <p>Clean, bright profiles with exceptional clarity; vibrant acidity that showcases origin.</p>
+          <ul class="list-check">
+            <li>Regions: Yirgacheffe, Sidama, Limmu</li>
+            <li>Flavor: Floral, citrus, tea-like</li>
+          </ul>
+          <a href="{{ url_for('index') }}#contact" class="arrow-link mt-4">Inquire now →</a>
+        </div>
+      </article>
+      <article class="card">
+  <img class="card-top-image" src="{{ url_for('static', filename='img/slider.jpg') }}" alt="Natural coffee"/>
+        <div class="card-content">
+          <h3>Natural Coffee</h3>
+          <p>Fruity, complex, and sweet with pronounced body; distinctive Ethiopian character.</p>
+          <ul class="list-check">
+            <li>Regions: Guji, Sidama</li>
+            <li>Flavor: Berry, tropical fruit, cocoa</li>
+          </ul>
+          <a href="{{ url_for('index') }}#contact" class="arrow-link mt-4">Inquire now →</a>
+        </div>
+      </article>
+      <article class="card">
+  <img class="card-top-image" src="{{ url_for('static', filename='img/coffee.png') }}" alt="Commercial coffee"/>
+        <div class="card-content">
+          <h3>Commercial Grade</h3>
+          <p>Reliable, cost-effective lots suited for blends and high-volume operations.</p>
+          <ul class="list-check">
+            <li>Regions: Djimmah, Lekempti, Sidama</li>
+            <li>Consistent cupping and grading</li>
+          </ul>
+          <a href="{{ url_for('index') }}#contact" class="arrow-link mt-4">Inquire now →</a>
+        </div>
+      </article>
+      <article class="card">
+  <img class="card-top-image" src="{{ url_for('static', filename='img/coffee.jpg') }}" alt="Specialty coffee"/>
+        <div class="card-content">
+          <h3>Specialty Grade</h3>
+          <p>Handpicked, traceable lots with exceptional scores from our Uraga, Guji station.</p>
+          <ul class="list-check">
+            <li>Rigorous QC and moisture checks</li>
+            <li>Freshness guaranteed</li>
+          </ul>
+          <a href="{{ url_for('index') }}#contact" class="arrow-link mt-4">Inquire now →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Processing Facility -->
+  <section class="feature-slab" id="facility">
+    <div class="container feature-grid reverse">
+      <div class="feature-content">
+        <span class="eyebrow">Our Processing Facility</span>
+        <h2>Addis Ababa, Ethiopia</h2>
+        <p>Our dedicated washing station is strategically located to source from Ethiopia's finest regions and coordinate export logistics efficiently.</p>
+  <div class="kpis mt-4">
+          <div class="kpi"><strong>2000m+</strong><div>Altitude</div></div>
+          <div class="kpi"><strong>24/7</strong><div>Quality Control</div></div>
+        </div>
+      </div>
+      <div>
+        <img src="{{ url_for('static', filename='img/himma-placeholder.png') }}" alt="Washing station" style="width:100%;border-radius:16px;border:1px solid #e7e9e7"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Processing Excellence -->
+  <section class="container mt-6 mb-7">
+    <h2 class="section-title">Our Processing Excellence</h2>
+    <div class="cards cols-2 cols-4">
+      <article class="card">
+        <div class="icon-wrap"><img src="{{ url_for('static', filename='img/hand.svg') }}" alt="" aria-hidden="true"></div>
+        <h3>Handpicked Selection</h3>
+        <p>Only the ripest cherries carefully harvested by experienced teams.</p>
+      </article>
+      <article class="card">
+        <div class="icon-wrap"><img src="{{ url_for('static', filename='img/wash.svg') }}" alt="" aria-hidden="true"></div>
+        <h3>Precision Washing</h3>
+        <p>Controlled washing techniques for clean, bright profiles.</p>
+      </article>
+      <article class="card">
+        <div class="icon-wrap"><img src="{{ url_for('static', filename='img/drying.svg') }}" alt="" aria-hidden="true"></div>
+        <h3>Controlled Drying</h3>
+        <p>Optimal drying conditions to preserve flavor and integrity.</p>
+      </article>
+        <article class="card">
+        <div class="icon-wrap"><img src="{{ url_for('static', filename='img/qa.svg') }}" alt="" aria-hidden="true"></div>
+        <h3>Quality Assurance</h3>
+        <p>Rigorous testing, documentation, and export certification.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Global Markets -->
+  <section class="container my-7">
+    <h2 class="section-title">Global Markets</h2>
+    <p class="section-subtitle">Reliable logistics connecting Ethiopia to key markets worldwide.</p>
+    <div class="cards cols-2 cols-4">
+      <article class="card">
+        <div class="icon-wrap"><img src="{{ url_for('static', filename='img/usa.svg') }}" alt="" aria-hidden="true"></div>
+        <h3>United States</h3>
+        <p>Specialty roasters and premium blends.</p>
+      </article>
+      <article class="card">
+        <div class="icon-wrap"><img src="{{ url_for('static', filename='img/europe.svg') }}" alt="" aria-hidden="true"></div>
+        <h3>Europe</h3>
+        <p>Artisan roasters and specialty cafés.</p>
+      </article>
+      <article class="card">
+        <div class="icon-wrap"><img src="{{ url_for('static', filename='img/china.svg') }}" alt="" aria-hidden="true"></div>
+        <h3>China</h3>
+        <p>Emerging premium segments and cafés.</p>
+      </article>
+      <article class="card">
+        <div class="icon-wrap"><img src="{{ url_for('static', filename='img/middleeast.svg') }}" alt="" aria-hidden="true"></div>
+        <h3>Middle East</h3>
+        <p>Traditional coffee markets and modern cafés.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Why Choose Himma Coffee -->
+  <section class="container mt-7 mb-8">
+    <h2 class="section-title">Why Choose Himma Coffee?</h2>
+    <div class="cards cols-2 cols-3">
+      <article class="card">
+        <div class="icon-wrap"><img src="{{ url_for('static', filename='img/hand.svg') }}" alt="" aria-hidden="true"></div>
+        <h3>Direct Access</h3>
+        <p>Established farmer relationships in key origins.</p>
+      </article>
+      <article class="card">
+        <div class="icon-wrap"><img src="{{ url_for('static', filename='img/facility.svg') }}" alt="" aria-hidden="true"></div>
+        <h3>Owned Facility</h3>
+        <p>End-to-end quality control and consistency.</p>
+      </article>
+      <article class="card">
+        <div class="icon-wrap"><img src="{{ url_for('static', filename='img/team.svg') }}" alt="" aria-hidden="true"></div>
+        <h3>Expert Leadership</h3>
+        <p>Decades of experience in export markets.</p>
+      </article>
+      <article class="card">
+        <div class="icon-wrap"><img src="{{ url_for('static', filename='img/eco.svg') }}" alt="" aria-hidden="true"></div>
+        <h3>Sustainability</h3>
+        <p>Ethical sourcing and long-term partnerships.</p>
+      </article>
+      <article class="card">
+        <div class="icon-wrap"><img src="{{ url_for('static', filename='img/remote.svg') }}" alt="" aria-hidden="true"></div>
+        <h3>Reliable Logistics</h3>
+        <p>Trusted partners and proven delivery record.</p>
+      </article>
+      <article class="card">
+        <div class="icon-wrap"><img src="{{ url_for('static', filename='img/qa.svg') }}" alt="" aria-hidden="true"></div>
+        <h3>Quality Assurance</h3>
+        <p>Rigorous QC processes and documentation.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2>Get In Touch</h2>
+      <p class="section-subtitle">Ready to explore premium Ethiopian coffee for your business?</p>
+      <a class="btn primary" href="{{ url_for('index') }}#contact">Start a coffee inquiry</a>
+    </div>
+  </section>
+{% endblock %}

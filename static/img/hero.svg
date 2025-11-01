@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-label="Himma hero graphic">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1f8a4c" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#b07a2a" stop-opacity="0.12"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="560" fill="url(#bg)"/>
+  <g fill="none" stroke="#187342" stroke-width="4" opacity="0.6">
+    <path d="M220 360c0 44 40 80 90 80h300c50 0 90-36 90-80v-80H220v80z"/>
+    <path d="M760 300h60c30 0 54 24 54 54s-24 54-54 54h-24"/>
+  </g>
+  <g fill="#6b441f" opacity="0.9">
+    <path d="M420 210c0-35 28-66 28-96 0-16-8-27-8-27s34 16 34 50c0 35-28 66-28 96 0 16 8 27 8 27s-34-16-34-50z"/>
+    <path d="M500 185c0-35 28-66 28-96 0-16-8-27-8-27s34 16 34 50c0 35-28 66-28 96 0 16 8 27 8 27s-34-16-34-50z"/>
+  </g>
+</svg>

@@ -1,0 +1,24 @@
+{# Meta Tags & SEO Include #}
+{# OpenGraph & Twitter Card tags for social sharing #}
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="{{ site.name }}" />
+<meta property="og:title" content="{% block og_title %}{{ site.name }} - Premium Ethiopian Coffee Export & Bakery Solutions{% endblock %}" />
+<meta property="og:description" content="{% block og_description %}Connect with Himma Group for premium Ethiopian coffee export, bakery machinery import, and food ingredient supply across East Africa.{% endblock %}" />
+<meta property="og:image" content="{{ url_for('static', filename='img/og-image.png', _external=True) }}" />
+<meta property="og:url" content="{{ request.base_url }}" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@himmagroup" />
+<meta name="twitter:title" content="{% block twitter_title %}{{ site.name }}{% endblock %}" />
+<meta name="twitter:description" content="{% block twitter_description %}Premium Ethiopian coffee, bakery machinery, and food ingredients.{% endblock %}" />
+<meta name="twitter:image" content="{{ url_for('static', filename='img/og-image.png', _external=True) }}" />
+
+{# Canonical URL #}
+<link rel="canonical" href="{{ request.base_url }}" />
+
+{# Additional Meta Tags #}
+<meta name="author" content="{{ site.name }}" />
+<meta name="theme-color" content="#1f8a4c" />
+
+{# Favicon #}
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='logo.png') }}" />

@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+
+{% block title %}Industrial Bakery Machinery & Equipment Import | Himma Group{% endblock %}
+
+{% block extra_js %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Industrial Bakery Machinery & Equipment",
+  "description": "Professional bakery equipment import, installation, and technical support. From mixers to ovens, we provide turnkey solutions for commercial bakeries in Ethiopia.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Himma Group"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "{{ site.name }}"
+    }
+  },
+  "category": "Industrial Equipment",
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Services",
+      "value": "Import, Installation, Technical Support"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Equipment Types",
+      "value": "Mixers, Ovens, Dough Processing, Packaging"
+    }
+  ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+  <!-- Hero -->
+  <section class="cover-hero" style="background-image:url('{{ url_for('static', filename='img/machines.png') }}');background-position:center;background-size:cover;background-repeat:no-repeat">
+    <div class="container cover-inner">
+      <span class="eyebrow">Bakery Machinery & Food Inputs</span>
+      <h1>Turnkey Equipment. Local Support.</h1>
+      <p>From selection to installation and after‑sales service — we keep Ethiopia's bakeries running reliably.</p>
+      <div class="kpis">
+        <div class="kpi"><strong>50+</strong><div>Installations</div></div>
+        <div class="kpi"><strong>24/7</strong><div>Support</div></div>
+        <div class="kpi"><strong>99%</strong><div>Uptime Goals</div></div>
+      </div>
+  <div class="hero-cta mt-6">
+        <a href="{{ url_for('index') }}#contact" class="btn primary">Get Equipment Quote</a>
+        <a href="https://wa.me/251935988288?text=Hi%20Himma%20Group%2C%20I%20need%20bakery%20equipment." target="_blank" class="btn ghost">Chat on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Band -->
+  <section class="stats-band">
+    <div class="container stats-grid">
+      <div class="stat-item"><div class="stat-number">50+</div><div class="stat-label">Installations</div></div>
+      <div class="stat-item"><div class="stat-number">15+</div><div class="stat-label">Years Experience</div></div>
+      <div class="stat-item"><div class="stat-number">1000+</div><div class="stat-label">Machines Supplied</div></div>
+      <div class="stat-item"><div class="stat-number">24/7</div><div class="stat-label">Technical Support</div></div>
+    </div>
+  </section>
+
+  <!-- Equipment Categories -->
+  <section class="container my-7">
+    <h2 class="section-title">Equipment Categories</h2>
+    <p class="section-subtitle">Industrial‑grade solutions sized for artisan bakeries up to high‑throughput plants.</p>
+  <div class="cards cols-2">
+      <article class="card">
+        <img class="card-top-image" src="{{ url_for('static', filename='img/oven.jpg') }}" alt="Ovens"/>
+        <h3>Ovens</h3>
+        <p>Deck, rotary, rack, and tunnel ovens engineered for efficiency and consistency.</p>
+        <ul class="list-check">
+          <li>Even heat distribution</li>
+          <li>Fuel‑efficient burners</li>
+          <li>Programmable profiles</li>
+        </ul>
+      </article>
+      <article class="card">
+        <img class="card-top-image" src="{{ url_for('static', filename='img/mixer.jpg') }}" alt="Mixers"/>
+        <h3>Mixers</h3>
+        <p>Planetary and spiral mixers for dough development and batch reliability.</p>
+        <ul class="list-check">
+          <li>Food‑grade steel bowls</li>
+          <li>Variable speed control</li>
+          <li>Safety interlocks</li>
+        </ul>
+      </article>
+      <article class="card">
+        <img class="card-top-image" src="{{ url_for('static', filename='img/proofer.jpg') }}" alt="Proofers and cooling"/>
+        <h3>Proofers & Cooling</h3>
+        <p>Humidity‑controlled proofers and cooling systems for precise results.</p>
+        <ul class="list-check">
+          <li>Accurate temp/humidity</li>
+          <li>Energy‑smart insulation</li>
+          <li>Anti‑bacterial interiors</li>
+        </ul>
+      </article>
+      <article class="card">
+        <img class="card-top-image" src="{{ url_for('static', filename='img/slicing.jpg') }}" alt="Processing and slicing"/>
+        <h3>Processing & Slicing</h3>
+        <p>Dividers, moulders, sheeters, and slicers for streamlined production.</p>
+        <ul class="list-check">
+          <li>High‑volume throughput</li>
+          <li>Tool‑less adjustments</li>
+          <li>Easy sanitation</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- Lifecycle Delivery -->
+  <section class="feature-slab">
+    <div class="container feature-grid reverse">
+      <div class="feature-content">
+        <span class="eyebrow">Implementation Lifecycle</span>
+        <h2>From Scoping To Reliable Operations</h2>
+        <ul class="list-check">
+          <li><strong>1. Assessment</strong> — capacity, utilities, layout, and goals</li>
+          <li><strong>2. Equipment Selection</strong> — brand options and financing support</li>
+          <li><strong>3. Import & Logistics</strong> — shipment tracking and customs clearance</li>
+          <li><strong>4. Installation & Commissioning</strong> — factory‑trained technicians</li>
+          <li><strong>5. Training & Handover</strong> — SOPs and safety procedures</li>
+          <li><strong>6. Service & Spares</strong> — maintenance plans and stocked parts</li>
+        </ul>
+      </div>
+      <div>
+        <img src="{{ url_for('static', filename='img/machines.png') }}" alt="Bakery equipment" style="width:100%;border-radius:16px;border:1px solid #e7e9e7"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="feature-slab">
+    <div class="container feature-grid">
+      <div class="feature-content">
+        <span class="eyebrow">Why Choose Himma</span>
+        <h2>Built For Reliability, Backed Locally</h2>
+        <ul class="list-check">
+          <li>Premium brands selected for Ethiopian conditions</li>
+          <li>Local installation, training, and fast spare parts</li>
+          <li>Process optimization and layout advisory</li>
+          <li>Transparent timelines, tracked logistics, clear SOPs</li>
+        </ul>
+      </div>
+      <div>
+  <img src="{{ url_for('static', filename='img/facility.jpg') }}" alt="Factory and service" class="mx-auto p-5" style="width:100%;max-width:520px;display:block;border-radius:16px;border:1px solid #e7e9e7;background:var(--bg)"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service & Support -->
+  <section class="container mt-6 mb-8">
+    <h2 class="section-title">Service That Keeps You Baking</h2>
+    <div class="cards cols-2">
+      <article class="card">
+        <div class="icon-wrap"><img src="{{ url_for('static', filename='img/warranty.svg') }}" alt="" aria-hidden="true"></div>
+        <h3>Warranty Coverage</h3>
+        <p>Manufacturer‑backed warranties with local claim handling.</p>
+      </article>
+      <article class="card">
+        <div class="icon-wrap"><img src="{{ url_for('static', filename='img/maintenance.svg') }}" alt="" aria-hidden="true"></div>
+        <h3>Planned Maintenance</h3>
+        <p>Preventive schedules and diagnostics to reduce downtime.</p>
+      </article>
+      <article class="card">
+        <div class="icon-wrap"><img src="{{ url_for('static', filename='img/training.svg') }}" alt="" aria-hidden="true"></div>
+        <h3>Operator Training</h3>
+        <p>Hands‑on training for safe, consistent production and quality.</p>
+      </article>
+      <article class="card">
+        <div class="icon-wrap"><img src="{{ url_for('static', filename='img/spares.svg') }}" alt="" aria-hidden="true"></div>
+        <h3>Spare Parts</h3><p>Addis hub stocking of critical wear parts for fast turnaround.</p>
+      </article>
+      <article class="card">
+        <div class="icon-wrap"><img src="{{ url_for('static', filename='img/remote.svg') }}" alt="" aria-hidden="true"></div>
+        <h3>Remote Support</h3><p>On‑call engineers and remote troubleshooting for quick fixes.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Machines Gallery Slider -->
+  <section class="container my-7" id="machines-gallery">
+    <h2 class="section-title" style="text-align:center">Equipment Gallery</h2>
+    <p class="section-subtitle" style="text-align:center;max-width:720px;margin-inline:auto">Swipe or use arrows to browse recent machines and accessories. Tap to view full‑screen.</p>
+    <div class="machines-carousel" data-machines-carousel>
+      <button class="mc-nav prev" data-prev aria-label="Previous">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="mc-track" data-track>
+        <!-- Images are injected from manifest.json at /static/img/machines-gallery/manifest.json -->
+      </div>
+      <button class="mc-nav next" data-next aria-label="Next">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="contact mt-7 py-6" id="contact">
+    <div class="container">
+      <h2>Discuss Your Project</h2>
+      <p class="section-subtitle">Tell us your capacity targets and facility constraints — we’ll recommend a reliable line.</p>
+      <a class="btn primary" href="{{ url_for('index') }}#contact">Request equipment consultation</a>
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Premium Ethiopian coffee export, bakery machinery import, and food ingredient supply from Himma Group in Addis Ababa." />
+  <meta name="theme-color" content="#1f8a4c" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>{% block title %}Himma Group - Coffee Export & Bakery Solutions{% endblock %}</title>
+
+  {# PWA Manifest #}
+  <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}" />
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='logo.png') }}" />
+
+  {# SEO & Social Meta Tags #}
+  {% include 'meta_tags.html' %}
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+
+  {# Google Analytics 4 - Replace GA_MEASUREMENT_ID with your actual ID #}
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', {
+      'page_title': 'Himma Group',
+      'page_location': window.location.href
+    });
+
+    // Custom event tracking
+    window.trackEvent = function(eventName, eventParams) {
+      gtag('event', eventName, eventParams);
+    };
+  </script>
+
+  {% block extra_css %}{% endblock %}
+  
+  {# JSON-LD Structured Data #}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "{{ site.name }}",
+    "url": "{{ url_for('index', _external=True) }}",
+    "logo": "{{ url_for('static', filename='logo.png', _external=True) }}",
+    "description": "Premium Ethiopian coffee export, bakery machinery import, and food ingredient supply across East Africa.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Addis Ababa",
+      "addressCountry": "ET"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Service",
+      "telephone": "{{ site.phone }}",
+      "email": "{{ site.email }}"
+    },
+    "sameAs": [
+      "https://www.facebook.com/himmagroup",
+      "https://www.linkedin.com/company/himmagroup",
+      "https://www.instagram.com/himmagroup"
+    ]
+  }
+  </script>
+
+  <!-- Add references to generated icons -->
+  <link rel="apple-touch-icon" sizes="192x192" href="/static/logo-192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/logo-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/logo-16.png">
+  <link rel="shortcut icon" href="/static/favicon.ico">
+
+</head>
+<body>
+  <header class="site-header" data-nav>
+    <div class="container row between center">
+      <a href="{{ url_for('index') }}" class="brand">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Himma Group logo" class="logo" onerror="this.onerror=null;this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=';" />
+        <span>{{ site.name }}</span>
+      </a>
+      <nav class="nav">
+        <a href="{{ url_for('index') }}#about">About</a>
+        <a href="{{ url_for('index') }}#businesses">Businesses</a>
+        <a href="{{ url_for('index') }}#gallery">Gallery</a>
+        <a href="{{ url_for('index') }}#faq">FAQ</a>
+        <a href="{{ url_for('index') }}#contact">Contact</a>
+      </nav>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false" data-menu-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h2>Himma Group</h2>
+        <p>Himma Group unites three complementary businesses: premium Ethiopian coffee export, import and installation of reliable bakery machinery, and the supply of high‑quality food ingredients—serving partners across Ethiopia and global markets.</p>
+        <div class="social-links">
+          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h2>Quick Links</h2>
+        <ul class="footer-links">
+          <li><a href="{{ url_for('index') }}#about">About Us</a></li>
+          <li><a href="{{ url_for('coffee') }}">Our Coffee</a></li>
+          <li><a href="{{ url_for('index') }}#businesses">Processing</a></li>
+          <li><a href="{{ url_for('coffee') }}">Global Markets</a></li>
+          <li><a href="{{ url_for('index') }}#contact">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h2>Contact Info</h2>
+        <ul class="contact-info">
+          <li><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</li>
+          <li><i class="fas fa-envelope"></i> info@himmagroup.com</li>
+          <li><i class="fas fa-phone"></i> +251935988288</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> {{ site.name }}. All rights reserved. | Premium specialty coffee, bakery machinery, and food ingredients</p>
+    </div>
+  </footer>
+
+  <!-- Toast Notifications -->
+  {% include 'components/toast.html' %}
+
+  <!-- Dark Mode Toggle -->
+  <button class="theme-toggle" aria-label="Toggle dark mode" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path class="sun-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+      <path class="moon-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" style="display:none" />
+    </svg>
+  </button>
+
+  <!-- WhatsApp Floating Button -->
+  <a class="whatsapp-fab" href="https://wa.me/251935988288?text=Hello%20Himma%20Group%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+  </a>
+
+  <script>
+    // Make site config available globally
+    window.HIMMA_CONTENT = {
+      site: {{ site | tojson }},
+      links: {{ links | tojson }}
+    };
+    // Set current year if placeholder exists
+    (function(){
+      var y = document.getElementById('year');
+      if (y) { y.textContent = new Date().getFullYear(); }
+    })();
+  </script>
+  <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+
+  {# PWA Service Worker Registration #}
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('{{ url_for('static', filename='sw.js') }}')
+          .then(registration => {
+            console.log('Service Worker registered successfully:', registration.scope);
+          })
+          .catch(error => {
+            console.log('Service Worker registration failed:', error);
+          });
+      });
+    }
+  </script>
+
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

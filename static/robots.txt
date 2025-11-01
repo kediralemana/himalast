@@ -1,0 +1,21 @@
+# Himma Group - Search Engine Crawling Directives
+# Allow all search engines to crawl all pages
+User-agent: *
+Allow: /
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+
+# Disallow crawling of admin/private areas (none currently, but good practice)
+Disallow: /admin
+Disallow: /private
+
+# Allow crawling of static assets
+Allow: /static/
+
+# Sitemap
+Sitemap: https://himmagroup.com/sitemap.xml
+
+# Crawl delay for polite crawling (in seconds)
+Crawl-delay: 1

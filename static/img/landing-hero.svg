@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Coffee, bakery machines, and ingredients illustration">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#1f8a4c" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#1f8a4c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b07a2a"/>
+      <stop offset="100%" stop-color="#6b441f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="#fff"/>
+  <ellipse cx="600" cy="420" rx="540" ry="300" fill="url(#glow)"/>
+  <g transform="translate(300,180)">
+    <!-- Main circle container -->
+    <circle cx="300" cy="280" r="230" fill="#ffffff" stroke="#e7e9e7" stroke-width="4"/>
+    <!-- Coffee bean icon -->
+    <g transform="translate(280,160)" fill="#6b441f">
+      <path d="M20 0c0 30-24 56-24 82 0 17 9 28 9 28S-20 97-20 66C-20 36 4 10 4-16 4-33-5-44-5-44S20-33 20 0z"/>
+      <path d="M48 14c0 30-24 56-24 82 0 17 9 28 9 28S8 111 8 80C8 50 32 24 32-2c0-17-9-28-9-28s25 11 25 44z"/>
+    </g>
+    <!-- Gear icon for machines -->
+    <g transform="translate(120,310)" stroke="#1f8a4c" stroke-width="6" fill="none">
+      <circle cx="70" cy="70" r="38"/>
+      <g>
+        <path d="M70 14v22"/><path d="M70 104v22"/>
+        <path d="M14 70h22"/><path d="M104 70h22"/>
+        <path d="M24 24l16 16"/><path d="M100 100l16 16"/>
+        <path d="M116 24l-16 16"/><path d="M40 100l-16 16"/>
+      </g>
+    </g>
+    <!-- Wheat/ingredients icon -->
+    <g transform="translate(430,330)">
+      <path d="M0 120c32-8 48-40 40-72-32 8-48 40-40 72z" fill="url(#gold)"/>
+      <path d="M22 110c32-8 48-40 40-72-32 8-48 40-40 72z" fill="#b07a2a" opacity=".85"/>
+      <path d="M-10 130l84-84" stroke="#6b441f" stroke-width="6"/>
+    </g>
+  </g>
+  <!-- Decorative lines -->
+  <g stroke="#e7e9e7" stroke-width="2" opacity="0.8">
+    <path d="M100 760H1100"/>
+    <path d="M160 800H1040"/>
+  </g>
+</svg>

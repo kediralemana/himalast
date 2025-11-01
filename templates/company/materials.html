@@ -1,0 +1,346 @@
+{% extends "base.html" %}
+
+{% block title %}Food Ingredients & Bakery Raw Materials Supply | Himma Group Ethiopia{% endblock %}
+
+{% block extra_js %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Food Ingredients & Bakery Raw Materials",
+  "description": "High-quality food ingredients and bakery raw materials supply. Consistent quality, reliable delivery for commercial bakeries and food manufacturers in Ethiopia.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Himma Group"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "{{ site.name }}"
+    }
+  },
+  "category": "Food Ingredients",
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Product Range",
+      "value": "Flour, Sugar, Yeast, Oils, Additives, Packaging"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Quality Assurance",
+      "value": "ISO Certified Suppliers"
+    }
+  ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+  <!-- Hero -->
+  <section class="cover-hero" style="background-image:url('{{ url_for('static', filename='img/materials.png') }}');background-position:center;background-size:cover;background-repeat:no-repeat">
+    <div class="container cover-inner">
+      <span class="eyebrow">Bakery Raw Materials</span>
+      <h1>Consistent Ingredients. Trusted Supply.</h1>
+      <p>Certified inputs, documented quality, and responsive delivery for Ethiopian bakeries.</p>
+      <div class="kpis">
+        <div class="kpi"><strong>100%</strong><div>COA Provided</div></div>
+        <div class="kpi"><strong>Nationwide</strong><div>Distribution</div></div>
+        <div class="kpi"><strong>Cold‑Chain</strong><div>Where Needed</div></div>
+      </div>
+      <div class="hero-cta" style="margin-top:2rem">
+        <a href="{{ url_for('index') }}#contact" class="btn primary">Order Materials</a>
+        <a href="https://wa.me/251935988288?text=Hi%20Himma%20Group%2C%20I%20need%20bakery%20materials." target="_blank" class="btn ghost">Chat on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Lines -->
+  <section class="container" style="margin:3rem auto">
+    <h2 class="section-title">Core Product Lines</h2>
+    <p class="section-subtitle">Quality‑assured ingredients tailored for bread, pastries, and confectionery.</p>
+  <!-- Use auto-fit grid so the last row stretches without leaving large whitespace -->
+  <div class="cards">
+      <article class="card">
+  <img class="card-top-image" src="{{ url_for('static', filename='img/improvers.png') }}" alt="Flour improvers" loading="lazy" decoding="async"/>
+        <h3>Flour Improvers</h3>
+        <p>Gluten, enzymes, and conditioners to stabilize dough and volume.</p>
+        <ul class="list-check">
+          <li>Enhanced tolerance</li>
+          <li>Consistent crumb</li>
+          <li>Cleaner labels available</li>
+        </ul>
+      </article>
+      <article class="card">
+  <img class="card-top-image" src="{{ url_for('static', filename='img/yeast.png') }}" alt="Yeast and leavening" loading="lazy" decoding="async"/>
+        <h3>Yeast & Leavening</h3>
+        <p>Active dry yeast, instant yeast, and chemical leavening systems.</p>
+        <ul class="list-check">
+          <li>Reliable fermentation</li>
+          <li>Optimized gas release</li>
+          <li>Storage guidelines included</li>
+        </ul>
+      </article>
+      <article class="card">
+  <img class="card-top-image" src="{{ url_for('static', filename='img/cocoa.jpg') }}" alt="Cocoa and chocolate" loading="lazy" decoding="async"/>
+        <h3>Cocoa & Chocolate</h3>
+        <p>Sustainably sourced cocoa powders and inclusions for premium taste.</p>
+        <ul class="list-check">
+          <li>Consistent flavor profiles</li>
+          <li>Allergen documentation</li>
+          <li>Batch traceability</li>
+        </ul>
+      </article>
+      <article class="card">
+  <img class="card-top-image" src="{{ url_for('static', filename='img/oils.png') }}" alt="Oils, fats and margarines" loading="lazy" decoding="async"/>
+        <h3>Oils, Fats & Margarines</h3>
+        <p>High‑quality cooking oils and bakery fats for texture and shelf life.</p>
+        <ul class="list-check">
+          <li>Frying and lamination grades</li>
+          <li>Oxidation protection</li>
+          <li>COA and spec sheets</li>
+        </ul>
+      </article>
+      <article class="card">
+  <img class="card-top-image" src="{{ url_for('static', filename='img/ingredients.jpg') }}" alt="Food ingredients" loading="lazy" decoding="async"/>
+        <h3>Food Ingredients</h3>
+        <p>Essential inputs for food manufacturing and processing.</p>
+        <ul class="list-check">
+          <li>Lecithin, mono/diglycerides</li>
+          <li>Antioxidants & vitamins</li>
+          <li>Natural colors & flavors</li>
+        </ul>
+      </article>
+      <article class="card">
+  <img class="card-top-image" src="{{ url_for('static', filename='img/fac.jpg') }}" alt="Packaging solutions" loading="lazy" decoding="async"/>
+        <h3>Packaging Solutions</h3>
+        <p>From bulk tankers to PET bottles and IBCs to match your operation.</p>
+        <ul class="list-check">
+          <li>Bulk, drums, IBC, flexitanks</li>
+          <li>Jerry cans & PET</li>
+          <li>Private labeling options</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- Quality & Compliance -->
+  <section class="feature-slab">
+    <div class="container feature-grid">
+      <div class="feature-content">
+        <span class="eyebrow">Quality & Compliance</span>
+        <h2>Documentation And Handling You Can Trust</h2>
+        <ul class="list-check">
+          <li>Certificate of Analysis and product specifications for each lot</li>
+          <li>Storage, handling, and shelf‑life guidance per ingredient</li>
+          <li>Lot‑level traceability and recall readiness</li>
+          <li>Temperature control and cold‑chain where required</li>
+        </ul>
+      </div>
+      <div>
+  <img src="{{ url_for('static', filename='img/materials.png') }}" alt="Bakery ingredients" style="width:100%;border-radius:16px;border:1px solid #e7e9e7" loading="lazy" decoding="async"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="container" style="margin:3rem auto">
+    <h2 class="section-title">Import & Distribution Services</h2>
+    <p class="section-subtitle">Reliable supply with technical advisory and nationwide logistics.</p>
+    <!-- Use fill variant to avoid whitespace on the last row -->
+    <div class="cards compact fill">
+      <article class="card">
+  <div class="icon-wrap"><img src="{{ url_for('static', filename='img/facility.svg') }}" alt="Logistics" aria-hidden="true" loading="lazy" decoding="async"></div>
+        <h3>International Importing</h3>
+        <p>Direct import from certified suppliers with full documentation and clearance.</p>
+      </article>
+      <article class="card">
+  <div class="icon-wrap"><img src="{{ url_for('static', filename='img/maintenance.svg') }}" alt="Warehouse" aria-hidden="true" loading="lazy" decoding="async"></div>
+        <h3>Warehousing in Addis</h3>
+        <p>Temperature‑appropriate storage and inventory planning for freshness.</p>
+      </article>
+      <article class="card">
+  <div class="icon-wrap"><img src="{{ url_for('static', filename='img/remote.svg') }}" alt="Distribution" aria-hidden="true" loading="lazy" decoding="async"></div>
+        <h3>Nationwide Distribution</h3>
+        <p>Planned deliveries to major Ethiopian cities with status updates.</p>
+      </article>
+      <article class="card">
+  <div class="icon-wrap"><img src="{{ url_for('static', filename='img/training.svg') }}" alt="Technical" aria-hidden="true" loading="lazy" decoding="async"></div>
+        <h3>Technical Support</h3>
+        <p>Guidance on selection, application, and process optimization.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Distribution Network & Import Sources -->
+  <section class="container" style="margin:3rem auto">
+    <h2 class="section-title">Distribution Network & Import Sources</h2>
+    <p class="section-subtitle">Sourcing globally. Delivering consistently across Ethiopia.</p>
+    <!-- Use fill to avoid whitespace when the last row has fewer items -->
+    <div class="cards compact fill">
+      <article class="card soft-hover">
+        <h3>Distribution in Ethiopia</h3>
+        <ul class="list-check">
+          <li>Addis Ababa – HQ & Main Warehouse</li>
+          <li>Dire Dawa – Eastern Distribution</li>
+          <li>Mekelle – Northern Hub</li>
+          <li>Bahir Dar – Northwest Service</li>
+          <li>Hawassa – Southern Hub</li>
+          <li>Jimma – Southwest Center</li>
+          <li>Adama – Central Logistics</li>
+        </ul>
+      </article>
+      <article class="card soft-hover">
+        <h3>Import Sources – Europe</h3>
+        <ul class="list-check">
+          <li>Netherlands – Specialty Fats</li>
+          <li>Germany – Improvers & Enzymes</li>
+          <li>Belgium – Margarines</li>
+          <li>France – Ingredients</li>
+          <li>Italy – Specialty Inputs</li>
+          <li>Spain – Oils & Emulsifiers</li>
+          <li>Turkey – Cooking Oils & Fats</li>
+        </ul>
+      </article>
+      <article class="card soft-hover">
+        <h3>Import Sources – Asia</h3>
+        <ul class="list-check">
+          <li>Indonesia – Palm Oil/Olein</li>
+          <li>Malaysia – RBD Palm</li>
+          <li>India – Specialty Oils & Lecithin</li>
+          <li>Thailand – Coconut Products</li>
+          <li>China – Additives</li>
+          <li>UAE – Regional Hub</li>
+        </ul>
+      </article>
+      <article class="card soft-hover">
+        <h3>Other Regions</h3>
+        <ul class="list-check">
+          <li>Ukraine/Russia – Sunflower</li>
+          <li>Argentina/Brazil – Soy</li>
+          <li>Egypt – Regional Partner</li>
+          <li>South Africa – Select Inputs</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- Industries Served -->
+  <section class="container" style="margin:3rem auto">
+    <h2 class="section-title">Industries We Serve</h2>
+    <div class="cards compact">
+      <article class="card soft-hover"><h3>Food Manufacturing</h3></article>
+      <article class="card soft-hover"><h3>Commercial Bakeries</h3></article>
+      <article class="card soft-hover"><h3>Confectionery</h3></article>
+      <article class="card soft-hover"><h3>Hotels & Hospitality</h3></article>
+      <article class="card soft-hover"><h3>Retail & Supermarkets</h3></article>
+      <article class="card soft-hover"><h3>QSR & Restaurants</h3></article>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="feature-slab">
+    <div class="container feature-grid reverse">
+      <div>
+        <img src="{{ url_for('static', filename='img/qa.jpg') }}" alt="Quality focus" style="width:100%;border-radius:16px;border:1px solid #e7e9e7"/>
+      </div>
+      <div class="feature-content">
+        <span class="eyebrow">Why Himma Materials</span>
+        <h2>Built For Reliability And Quality</h2>
+        <ul class="list-check">
+          <li>Premium sourcing from certified suppliers</li>
+          <li>Competitive pricing with stable supply</li>
+          <li>Expert advisory and responsive support</li>
+          <li>Sustainability and documentation at core</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="container" style="margin:3rem auto">
+    <h2 class="section-title">Certifications</h2>
+    <!-- Use fill so the second row stretches evenly with two items -->
+    <div class="cards compact fill certifications">
+      <article class="card soft-hover"><h3>ISO 22000</h3><p>Food Safety Management</p></article>
+      <article class="card soft-hover"><h3>HACCP</h3><p>Critical Control Compliance</p></article>
+      <article class="card soft-hover"><h3>Halal / Kosher</h3><p>Dietary Standards</p></article>
+      <article class="card soft-hover"><h3>Organic</h3><p>USDA / EU Certified Lines</p></article>
+      <article class="card soft-hover"><h3>GMP</h3><p>Good Manufacturing Practices</p></article>
+    </div>
+  </section>
+
+  <!-- Value For Bakeries -->
+  <section class="container" style="margin:2.5rem auto 4rem">
+    <h2 class="section-title">Service For Your Growth</h2>
+    <div class="cards cols-2 cols-4">
+      <article class="card">
+        <div class="icon-wrap"><img src="{{ url_for('static', filename='img/training.svg') }}" alt="" aria-hidden="true"></div>
+        <h3>Technical Advisory</h3>
+        <p>Support for formulations, process tweaks, and cost‑in‑use improvements.</p>
+      </article>
+      <article class="card">
+        <div class="icon-wrap"><img src="{{ url_for('static', filename='img/maintenance.svg') }}" alt="" aria-hidden="true"></div>
+        <h3>Inventory Planning</h3>
+        <p>Forward‑stocking and flexible schedules to avoid stock‑outs.</p>
+      </article>
+      <article class="card">
+        <div class="icon-wrap"><img src="{{ url_for('static', filename='img/slicing.svg') }}" alt="" aria-hidden="true"></div>
+        <h3>Coordinated Sourcing</h3>
+        <p>Bundle machinery and ingredients to align capacity and quality.</p>
+      </article>
+      <article class="card">
+        <div class="icon-wrap"><img src="{{ url_for('static', filename='img/remote.svg') }}" alt="" aria-hidden="true"></div>
+        <h3>Reliable Logistics</h3>
+        <p>Planned deliveries and status updates from warehouse to site.</p>
+      </article>
+    </div>
+    <div class="mt-5">
+      <a class="btn primary" href="{{ url_for('index') }}#contact">Check availability</a>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="contact feature-slab section-tight" id="contact">
+    <div class="container feature-grid">
+      <div>
+        <h2 class="mb-2">Request Product Information</h2>
+        <p class="section-subtitle mb-4">Tell us your monthly volume and target specs — we’ll send a tailored supply plan and pricing.</p>
+
+        <ul class="list-check my-4">
+          <li>Response within 24 hours</li>
+          <li>Bulk pricing and delivery options</li>
+          <li>Samples and technical guidance on request</li>
+        </ul>
+
+        <div class="cta-row mt-2">
+          <a class="btn primary" href="{{ url_for('index') }}#contact">Contact our materials team</a>
+          <a class="btn ghost" href="{{ url_for('index') }}#contact">Request a quote</a>
+          <a class="btn ghost" href="https://wa.me/251935988288?text=Hi%20Himma%20Group%2C%20I%20need%20bakery%20materials%20pricing%20and%20availability." target="_blank">Chat on WhatsApp</a>
+        </div>
+
+        <div class="mt-4" style="font-size:.95rem;color:var(--text-muted)">
+          <span>Prefer email or phone? </span>
+          <a href="mailto:{{ site.email }}" style="color:var(--green)">{{ site.email }}</a>
+          <span> · </span>
+          <a href="tel:{{ site.phone }}" style="color:var(--green)">{{ site.phone }}</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="card soft-hover p-4">
+          <h3 class="mt-0">What to include</h3>
+          <p class="mb-4" style="margin-top:.25rem">Sharing a bit more helps us quote faster:</p>
+          <ul class="list-check">
+            <li>Monthly volume and packaging size</li>
+            <li>Target specs (protein %, fat %, origin)</li>
+            <li>Delivery city and preferred schedule</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

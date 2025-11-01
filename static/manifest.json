@@ -1,0 +1,30 @@
+{
+  "name": "Himma Group - Premium Ethiopian Coffee & Bakery Solutions",
+  "short_name": "Himma Group",
+  "description": "Premium Ethiopian Coffee Export, Bakery Machinery Import & Raw Materials Supply",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f7f5",
+  "theme_color": "#1f8a4c",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/static/logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/static/logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "food", "manufacturing"],
+  "screenshots": [],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "lang": "en-US",
+  "dir": "ltr"
+}
