@@ -5,11 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Himma Group | Coffee Export | Bakery Machinery | Raw Materials</title>
   <meta name="description" content="Himma Group: Coffee export, bakery machinery import, and bakery raw materials supply. East Africa and global partners." />
+  <meta name="theme-color" content="#1f8a4c" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="icon" href="static/logo.png" />
+  <!-- PWA manifest & icons -->
+  <link rel="manifest" href="static/manifest.json" />
+  <link rel="apple-touch-icon" sizes="192x192" href="static/logo-192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="static/logo-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="static/logo-16.png">
+  <link rel="shortcut icon" href="static/favicon.ico">
 </head>
 <body>
   <header class="site-header" data-nav>
@@ -292,6 +298,34 @@
       s.onerror=function(){ /* optional content not provided */ };
       document.currentScript.parentElement.appendChild(s);
     })();
+  </script>
+  <!-- Register service worker to ensure users get the latest version (and updates activate immediately) -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/static/sw.js').then(reg => {
+          // If a new worker is waiting, activate it immediately
+          if (reg.waiting) {
+            reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+          }
+          // If a new worker is installing, listen for it to be ready then activate
+          reg.addEventListener('updatefound', () => {
+            const sw = reg.installing;
+            if (!sw) return;
+            sw.addEventListener('statechange', () => {
+              if (sw.state === 'installed' && navigator.serviceWorker.controller) {
+                sw.postMessage({ type: 'SKIP_WAITING' });
+              }
+            });
+          });
+          // When the active controller changes (new SW), reload once to get fresh assets
+          let refreshed = false;
+          navigator.serviceWorker.addEventListener('controllerchange', () => {
+            if (refreshed) return; refreshed = true; window.location.reload();
+          });
+        }).catch(console.warn);
+      });
+    }
   </script>
   <script src="assets/js/main.js"></script>
 </body>
